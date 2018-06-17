@@ -32,7 +32,8 @@ public class CompanyController {
     private Mailer mailer;
     
     @RequestMapping(method = RequestMethod.GET)
-    public String index(Model model){
+    @ResponseBody
+    public String  index(Model model){
         model.addAttribute("companies",
                 companyRepository.findAll());
         return "companies/index";
